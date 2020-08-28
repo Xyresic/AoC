@@ -1,0 +1,4 @@
+Solved with reasoning.
+input: hxbxwxba
+part one: hxbxxyzz
+part two: hxcaabcc

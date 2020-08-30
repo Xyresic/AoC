@@ -1,0 +1,4 @@
+Solved with reasoning.
+input: 100hp, 8 dmg, 2 armor
+part one: 91
+part two: 158

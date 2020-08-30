@@ -1,0 +1,4 @@
+Solved with reasoning.
+input: 51hp, 9 dmg
+part one: 900 (Recharge, Poison, Shield, Magic Missiles, Poison, Magic Missiles, Magic Missiles, Magic Missiles)
+part two: 1216 (Poison, Recharge, Shield, Poison, Recharge, Drain, Poison, Magic Missiles)

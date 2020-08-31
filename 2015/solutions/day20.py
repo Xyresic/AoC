@@ -1,21 +1,23 @@
-i = 33100000
+minPresents = 33100000
 
-#part one
-presents = [0] * (i // 10)
-for n in range(1, i // 10 + 1):
-    for m in range(n, i // 10, n):
-        presents[m] += n * 10
-for n in range(i // 10):
-    if presents[n] >= i:
-        print(n)
+# part one
+maxSearch = minPresents // 10
+presents = [0] * maxSearch
+for i in range(1, maxSearch + 1):
+    for j in range(i, maxSearch, i):
+        presents[j] += i * 10
+for i in range(maxSearch):
+    if presents[i] >= minPresents:
+        print(i)
         break
 
-#part two
-presents = [0] * (i // 11)
-for n in range(1, i // 11 + 1):
-    for m in range(n, min(i // 11, n * 50 + 1), n):
-        presents[m] += n * 11
-for n in range(i // 11):
-    if presents[n] >= i:
-        print(n)
+# part two
+maxSearch = minPresents // 11
+presents = [0] * maxSearch
+for i in range(1, maxSearch + 1):
+    for j in range(i, min(maxSearch, i * 50 + 1), i):
+        presents[j] += i * 11
+for i in range(maxSearch):
+    if presents[i] >= minPresents:
+        print(i)
         break

@@ -1,4 +1,7 @@
-Solved with reasoning.
 input: 100hp, 8 dmg, 2 armor
 part one: 91
 part two: 158
+
+Winner can be deduced solely on sum of attack and damage: player wins if sum is greater than or equal to the boss's.
+Find the lowest cost combination whose stats total 10 and the greatest cost combination whose stats total 9.
+The rings are mostly garbage, but look at the difference in price between equipment to determine if a ring is worth it.

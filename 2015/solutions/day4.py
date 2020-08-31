@@ -1,19 +1,19 @@
-import hashlib
+from hashlib import md5
 
-i = 'iwrupvqb'
+key = 'iwrupvqb'
 
-#part one
+# part one
 suffix = 1
 while True:
-    if hashlib.md5(f'{i}{suffix}'.encode()).hexdigest()[:5] == '00000':
+    if md5(f'{key}{suffix}'.encode()).hexdigest()[:5] == '00000':
         print(suffix)
         break
     suffix += 1
 
-#part two
+# part two
 suffix = 1
 while True:
-    if hashlib.md5(f'{i}{suffix}'.encode()).hexdigest()[:6] == '000000':
+    if md5(f'{key}{suffix}'.encode()).hexdigest()[:6] == '000000':
         print(suffix)
         break
     suffix += 1

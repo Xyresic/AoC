@@ -1,4 +1,9 @@
-Solved with reasoning.
 input: 51hp, 9 dmg
 part one: 900 (Recharge, Poison, Shield, Magic Missiles, Poison, Magic Missiles, Magic Missiles, Magic Missiles)
 part two: 1216 (Poison, Recharge, Shield, Poison, Recharge, Drain, Poison, Magic Missiles)
+
+Poison is the most powerful damage spell, and shield the most powerful sustaining spell. Drain is pretty bad.
+Impossible to deal enough damage and survive with 500 mana, so at least one recharge is necessary.
+For part two, two recharges, two poisons, and one shield are abosultely necessary.
+Start poisoning as early as possible to survive.
+Poison deals 9 damage before the boss attacks again.

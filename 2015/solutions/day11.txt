@@ -1,4 +1,5 @@
-Solved with reasoning.
 input: hxbxwxba
 part one: hxbxxyzz
 part two: hxcaabcc
+
+Earliest passwords that satisfy the increasing straight and two pairs rules follow <pair><mid><pair> pattern at the end.

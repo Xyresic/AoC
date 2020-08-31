@@ -1,6 +1,6 @@
-#less than 40 sugar
-#less than 43 sprinkles+candy
-#less than 67 chocolate
+# less than 40 sugar
+# less than 43 sprinkles + candy
+# less than 67 chocolate
 
 def make_cookie(part_two=False):
     scores = []
@@ -18,8 +18,8 @@ def make_cookie(part_two=False):
                 scores.append(cap * dur * flavor * texture)
     return max(scores)
 
-#part one
+# part one
 print(make_cookie())
 
-#part two
+# part two
 print(make_cookie(True))

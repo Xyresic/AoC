@@ -1,68 +1,68 @@
 from itertools import combinations
 from functools import reduce
 
-i = set([int(num.strip()) for num in open('../inputs/input24.txt').readlines()])
+weights = set([int(num.strip()) for num in open('../inputs/input24.txt').readlines()])
 
-#part one
-smallest_fronts = set()
-min_front = -1
-for n in range(5, 20):
-    for front in combinations(i, n):
+# part one
+smallestFronts = set()
+minFront = -1
+for i in range(5, 20):
+    for front in combinations(weights, i):
         if sum(front) != 512:
             continue
-        remainder = i - set(front)
+        remainder = weights - set(front)
         valid = False
-        for j in range(5, 25 - n):
+        for j in range(5, 25 - i):
             for mid in combinations(remainder, j):
                 if sum(mid) != 512:
                     continue
-                if min_front == -1 or n == min_front:
-                    min_front = n
+                if minFront == -1 or i == minFront:
+                    minFront = i
                     valid = True
                     break
-            if n == min_front and valid:
+            if i == minFront and valid:
                 break
         if valid:
-            smallest_fronts.add(front)
-        if min_front != -1 and n > min_front:
+            smallestFronts.add(front)
+        if minFront != -1 and i > minFront:
             break
-    if min_front != -1:
+    if minFront != -1:
         break
-smallest_fronts = [reduce(lambda x, y: x * y, front) for front in smallest_fronts]
-print(min(smallest_fronts))
+smallestFronts = [reduce(lambda x, y: x * y, front) for front in smallestFronts]
+print(min(smallestFronts))
 
-#part two
-smallest_fronts = set()
-min_front = -1
-for n in range(4, 18):
-    for front in combinations(i, n):
+# part two
+smallestFronts = set()
+minFront = -1
+for i in range(4, 18):
+    for front in combinations(weights, i):
         if sum(front) != 384:
             continue
-        remainder = i - set(front)
-        for j in range(4, 22 - n):
+        remainder = weights - set(front)
+        for j in range(4, 22 - i):
             for mid in combinations(remainder, j):
                 if sum(mid) != 384:
                     continue
                 leftover = remainder - set(mid)
                 valid = False
-                for k in range(4, 26 - n - j):
+                for k in range(4, 26 - i - j):
                     for penult in combinations(leftover, k):
                         if sum(penult) != 384:
                             continue
-                        if min_front == -1 or n == min_front:
-                            min_front = n
+                        if minFront == -1 or i == minFront:
+                            minFront = i
                             valid = True
                             break
-                    if n == min_front and valid:
+                    if i == minFront and valid:
                         break
                 if valid:
-                    smallest_fronts.add(front)
+                    smallestFronts.add(front)
                     break
-            if n == min_front:
+            if i == minFront:
                 break
-        if min_front != -1 and n > min_front:
+        if minFront != -1 and i > minFront:
             break
-    if min_front != -1:
+    if minFront != -1:
         break
-smallest_fronts = [reduce(lambda x, y: x * y, front) for front in smallest_fronts]
-print(min(smallest_fronts))
+smallestFronts = [reduce(lambda x, y: x * y, front) for front in smallestFronts]
+print(min(smallestFronts))

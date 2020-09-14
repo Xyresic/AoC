@@ -2,7 +2,7 @@ with open('../inputs/input3.txt', 'r') as f:
     data = f.read()
 
     # part one
-    houses = [0j]
+    houses = set([0j])
     pos = 0j
     for c in data:
         if c == '>':
@@ -13,12 +13,11 @@ with open('../inputs/input3.txt', 'r') as f:
             pos += 1j
         else:
             pos -= 1j
-        if pos not in houses:
-            houses.append(pos)
+        houses.add(pos)
     print(len(houses))
 
     # part two
-    houses = [0j]
+    houses = set([0j])
     santa = 0j
     roboSanta = 0j
     for i in range(len(data)):
@@ -32,10 +31,8 @@ with open('../inputs/input3.txt', 'r') as f:
             delta = -1j
         if i % 2 == 0:
             santa += delta
-            if santa not in houses:
-                houses.append(santa)
+            houses.add(santa)
         else:
             roboSanta += delta
-            if roboSanta not in houses:
-                houses.append(roboSanta)
+            houses.add(roboSanta)
     print(len(houses))

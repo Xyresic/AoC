@@ -30,6 +30,8 @@ public class Day1 {
         int[] pos = {0, 0};
         ArrayList<int[]> visited = new ArrayList<int[]>();
         boolean found = false;
+        int part2_ans = 0;
+
         for (String dir : input) {
             if (dir.contains("L")) {
                 curDir = (curDir + 1) % 4;
@@ -45,8 +47,7 @@ public class Day1 {
                     if (!contains(visited, step)) {
                         visited.add(step);
                     } else {
-                        //part two
-                        System.out.println(Math.abs(step[0]) + Math.abs(step[1]));
+                        part2_ans = Math.abs(step[0]) + Math.abs(step[1]);
                         found = true;
                     }
                 }
@@ -57,5 +58,8 @@ public class Day1 {
 
         //part one
         System.out.println(Math.abs(pos[0]) + Math.abs(pos[1]));
+
+        //part two
+        System.out.println(part2_ans);
     }
 }

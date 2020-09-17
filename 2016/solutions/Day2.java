@@ -32,18 +32,18 @@ public class Day2 {
                         break;
                     case 'L':
                         if (button1 != 1 && button1 != 4 && button1 != 7) {
-                            button1 -= 1;
+                            button1--;
                         }
                         if (button2 - 1 > 1 && !keypad[button2 - 1].isEmpty()) {
-                            button2 -= 1;
+                            button2--;
                         }
                         break;
                     default:
                         if (button1 != 3 && button1 != 6 && button1 != 9) {
-                            button1 += 1;
+                            button1++;
                         }
                         if (button2 + 1 < 23 && !keypad[button2 + 1].isEmpty()) {
-                            button2 += 1;
+                            button2++;
                         }
                 }
             }

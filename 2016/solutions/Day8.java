@@ -19,10 +19,11 @@ public class Day8 {
             } else {
                 String[] split = instr.split(" ");
                 int index = Integer.parseInt(split[2].split("=")[1]);
+                int shift = Integer.parseInt(split[4]);
                 if (instr.contains("row")) {
                     boolean[] copy = display[index].clone();
                     for (int i = 0; i < 50; i++) {
-                        display[index][(i + Integer.parseInt(split[4])) % 50] = copy[i];
+                        display[index][(i + shift) % 50] = copy[i];
                     }
                 } else {
                     boolean[] copy = new boolean[6];
@@ -30,7 +31,7 @@ public class Day8 {
                         copy[i] = display[i][index];
                     }
                     for (int i = 0; i < 6; i++) {
-                        display[(i + Integer.parseInt(split[4])) % 6][index] = copy[i];
+                        display[(i + shift) % 6][index] = copy[i];
                     }
                 }
             }

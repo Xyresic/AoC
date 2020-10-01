@@ -2,7 +2,7 @@ with open('../inputs/input3.txt', 'r') as f:
     data = f.read()
 
     # part one
-    houses = set([0j])
+    houses = {0j}
     pos = 0j
     for c in data:
         if c == '>':
@@ -17,7 +17,7 @@ with open('../inputs/input3.txt', 'r') as f:
     print(len(houses))
 
     # part two
-    houses = set([0j])
+    houses = {0j}
     santa = 0j
     roboSanta = 0j
     for i in range(len(data)):

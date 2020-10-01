@@ -9,7 +9,7 @@ public class Day7 {
         int aba_count = 0;
         Pattern invalid = Pattern.compile("\\[[^\\]]*(\\w)(?!\\1)(\\w)\\2\\1");
         Pattern valid = Pattern.compile("(\\w)(?!\\1)(\\w)\\2\\1");
-        Pattern aba = Pattern.compile("(?=(?:(\\w)(?!\\1)(\\w)\\1(?=(?:\\w*$|\\w*\\[\\w*\\]))))");
+        Pattern aba = Pattern.compile("(?=(?:(\\w)(?!\\1)(\\w)\\1(?!\\w*\\])))");
 
         while (s.hasNext()) {
             String ip = s.nextLine();

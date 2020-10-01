@@ -15,9 +15,7 @@ public class Day7 {
             String ip = s.nextLine();
             Matcher invalid_matcher = invalid.matcher(ip);
             Matcher valid_matcher = valid.matcher(ip);
-            if (!invalid_matcher.find() && valid_matcher.find()) {
-                abba_count++;
-            }
+            if (!invalid_matcher.find() && valid_matcher.find()) abba_count++;
             Matcher aba_matcher = aba.matcher(ip);
             while (aba_matcher.find()) {
                 Pattern bab = Pattern.compile(String.format("\\[[^\\]]*(%s)%s\\1", ip.charAt(aba_matcher.start() + 1), ip.charAt(aba_matcher.start())));

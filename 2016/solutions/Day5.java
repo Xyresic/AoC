@@ -10,9 +10,7 @@ public class Day5 {
 
     public static boolean isFull(String[] arr) {
         for (String s : arr) {
-            if (s == null) {
-                return false;
-            }
+            if (s == null) return false;
         }
         return true;
     }

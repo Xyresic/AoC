@@ -17,15 +17,9 @@ public class Day3 {
             l1.add(sides.get(0));
             l2.add(sides.get(1));
             l3.add(sides.get(2));
-            if (sides.get(0) + sides.get(1) <= sides.get(2)) {
-                continue;
-            }
-            if (sides.get(1) + sides.get(2) <= sides.get(0)) {
-                continue;
-            }
-            if (sides.get(0) + sides.get(2) <= sides.get(1)) {
-                continue;
-            }
+            if (sides.get(0) + sides.get(1) <= sides.get(2)) continue;
+            if (sides.get(1) + sides.get(2) <= sides.get(0)) continue;
+            if (sides.get(0) + sides.get(2) <= sides.get(1)) continue;
             count1++;
         }
 
@@ -33,21 +27,15 @@ public class Day3 {
             int a = l1.get(i);
             int b = l1.get(i+1);
             int c = l1.get(i+2);
-            if (a + b > c && b + c > a && a + c > b) {
-                count2++;
-            }
+            if (a + b > c && b + c > a && a + c > b) count2++;
             a = l2.get(i);
             b = l2.get(i+1);
             c = l2.get(i+2);
-            if (a + b > c && b + c > a && a + c > b) {
-                count2++;
-            }
+            if (a + b > c && b + c > a && a + c > b) count2++;
             a = l3.get(i);
             b = l3.get(i+1);
             c = l3.get(i+2);
-            if (a + b > c && b + c > a && a + c > b) {
-                count2++;
-            }
+            if (a + b > c && b + c > a && a + c > b) count2++;
         }
 
         //part one

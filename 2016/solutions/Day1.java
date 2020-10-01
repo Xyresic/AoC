@@ -6,9 +6,7 @@ public class Day1 {
         if (a1.length != a2.length) return false;
         else {
             for (int i = 0; i < a1.length; i++) {
-                if (a1[i] != a2[i]) {
-                    return false;
-                }
+                if (a1[i] != a2[i]) return false;
             }
             return true;
         }
@@ -16,9 +14,7 @@ public class Day1 {
 
     private static boolean contains(ArrayList<int[]> arr, int[] ele) {
         for (int[] comp : arr) {
-            if (intArrEquals(comp, ele)) {
-                return true;
-            }
+            if (intArrEquals(comp, ele)) return true;
         }
         return false;
     }

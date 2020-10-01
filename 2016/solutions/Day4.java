@@ -27,17 +27,13 @@ public class Day4 {
                 counts[name.charAt(i) - 97][0]++;
                 sb.append((char)((name.charAt(i)-97+shift)%26+97));
             }
-            if (sb.toString().contains("north")) {
-               part2_ans = id;
-            }
+            if (sb.toString().contains("north")) part2_ans = id;
             Arrays.sort(counts, (int[] a, int[] b) -> b[0] - a[0]);
             sb.setLength(0);
             for (int i = 0; i < 5; i++) {
                 sb.append((char)counts[i][1]);
             }
-            if (checksum.equals(sb.toString())) {
-                sum += id;
-            }
+            if (checksum.equals(sb.toString())) sum += id;
         }
 
         //part one

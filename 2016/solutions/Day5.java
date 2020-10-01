@@ -1,6 +1,5 @@
 import java.io.*;
 import java.math.*;
-import java.util.*;
 import java.security.*;
 
 public class Day5 {

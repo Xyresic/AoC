@@ -13,13 +13,13 @@ public class Day3 {
 
         while (s.hasNext()) {
             String[] sides_str = s.nextLine().trim().split("\\s+");
-            List<Integer> sides = Arrays.stream(sides_str).map(Integer::parseInt).collect(Collectors.toList());
-            l1.add(sides.get(0));
-            l2.add(sides.get(1));
-            l3.add(sides.get(2));
-            if (sides.get(0) + sides.get(1) <= sides.get(2)) continue;
-            if (sides.get(1) + sides.get(2) <= sides.get(0)) continue;
-            if (sides.get(0) + sides.get(2) <= sides.get(1)) continue;
+            int[] sides = Arrays.stream(sides_str).mapToInt(Integer::parseInt).toArray();
+            l1.add(sides[0]);
+            l2.add(sides[1]);
+            l3.add(sides[2]);
+            if (sides[0] + sides[1] <= sides[2]) continue;
+            if (sides[1] + sides[2] <= sides[0]) continue;
+            if (sides[0] + sides[2] <= sides[1]) continue;
             count1++;
         }
 

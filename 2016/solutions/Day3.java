@@ -7,9 +7,9 @@ public class Day3 {
         Scanner s = new Scanner(new File("../inputs/input3.txt"));
         int count1 = 0;
         int count2 = 0;
-        List<Integer> l1 = new ArrayList<Integer>();
-        List<Integer> l2 = new ArrayList<Integer>();
-        List<Integer> l3 = new ArrayList<Integer>();
+        List<Integer> l1 = new ArrayList<>();
+        List<Integer> l2 = new ArrayList<>();
+        List<Integer> l3 = new ArrayList<>();
 
         while (s.hasNext()) {
             String[] sides_str = s.nextLine().trim().split("\\s+");

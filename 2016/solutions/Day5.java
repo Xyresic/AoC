@@ -15,7 +15,7 @@ public class Day5 {
         return true;
     }
 
-    public static void main(String[] args) throws FileNotFoundException, NoSuchAlgorithmException {
+    public static void main(String[] args) throws NoSuchAlgorithmException {
         String input = "uqwqemis";
         MessageDigest md = MessageDigest.getInstance("MD5");
         StringBuilder code = new StringBuilder();

@@ -1,6 +1,3 @@
-import java.math.*;
-import java.sql.SQLOutput;
-
 public class Day16 {
     public static String dragon(String a) {
         StringBuilder b = new StringBuilder();

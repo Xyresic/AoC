@@ -12,7 +12,6 @@ public class Day25 {
         List<Integer> stream = new ArrayList<>();
 
         while(index < lines.size()) {
-            //System.out.println(registers + " " + lines.get(index));
             String[] split = lines.get(index).split(" ");
             switch (split[0]) {
                 case "cpy":

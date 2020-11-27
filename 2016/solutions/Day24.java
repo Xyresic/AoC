@@ -50,17 +50,18 @@ public class Day24 {
         arr[i2] = val;
     }
 
-    static void permute(int k, int[] arr) {
+    static void permute(int k, int[] arr, boolean part_two) {
         if (k == 1) {
             int cost = costs[0][arr[0]];
             for (int i = 0; i < arr.length - 1; i++) cost += costs[arr[i]][arr[i + 1]];
+            if (part_two) cost += costs[arr[arr.length - 1]][0];
             path_costs.add(cost);
         } else {
-            permute(k - 1, arr);
+            permute(k - 1, arr, part_two);
             for (int i = 0; i < k - 1; i++) {
                 if (k % 2 == 0) swap(i, k - 1, arr);
                 else swap(0, k - 1, arr);
-                permute(k - 1, arr);
+                permute(k - 1, arr, part_two);
             }
         }
     }
@@ -97,7 +98,12 @@ public class Day24 {
             }
         }
 
-        permute(7, new int[]{1, 2, 3, 4, 5, 6, 7});
+        permute(7, new int[]{1, 2, 3, 4, 5, 6, 7}, false);
+        //part one
+        System.out.println(Collections.min(path_costs));
+
+        path_costs  = new ArrayList<>();
+        permute(7, new int[]{1, 2, 3, 4, 5, 6, 7}, true);
         //part one
         System.out.println(Collections.min(path_costs));
     }

@@ -11,7 +11,6 @@ public class Day23 {
         registers.put("d", 0);
 
         while(index < lines.size()) {
-            //System.out.println(registers + " " + lines.get(index));
             String[] split = lines.get(index).split(" ");
             switch (split[0]) {
                 case "cpy":

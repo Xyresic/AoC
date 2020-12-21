@@ -3,8 +3,6 @@ const fs = require('fs');
 let summation = (a, b) => {return parseInt(a) + parseInt(b)};
 
 fs.readFile('../inputs/input1.txt', 'utf-8', (err, data) => {
-    if (err) throw err;
-
     data = data.trim();
     let re = /(.)(?=\1)/g;
     let sum = data.match(re).reduce(summation);

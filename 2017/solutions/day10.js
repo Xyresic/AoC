@@ -29,7 +29,7 @@ let hash = (lengths, rounds, part_two=false) => {
 //part one
 console.log(hash(input.split(',').map(x => parseInt(x)), 1));
 
-input = input.split('').map(x => x.charCodeAt(0)).concat([17, 31, 73, 47, 23]);
+input = input.split('').map(x => x.charCodeAt()).concat([17, 31, 73, 47, 23]);
 let sparse_hash = hash(input, 64, true);
 let dense_hash = [];
 for (let i = 0; i < 16; i++) dense_hash.push(sparse_hash.slice(16 * i, 16 * i + 16).reduce((a, b) => a ^ b));

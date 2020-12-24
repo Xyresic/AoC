@@ -12,7 +12,10 @@ let reverse = (list, start, end) => {
     }
 }
 
-let hash = (lengths, rounds, part_two=false) => {
+let knot_hash = (input, rounds, part_two=false) => {
+    let lengths;
+    if (part_two) lengths = input.split('').map(x => x.charCodeAt()).concat([17, 31, 73, 47, 23]);
+    else lengths = input.split(',').map(x => parseInt(x))
     let list = [...Array(256).keys()];
     let pos = 0;
     let skip = 0;
@@ -23,16 +26,17 @@ let hash = (lengths, rounds, part_two=false) => {
             skip++;
         }
     }
-    return part_two? list:list[0] * list[1];
+    if (part_two) {
+        let dense_hash = [];
+        for (let i = 0; i < 16; i++) dense_hash.push(list.slice(16 * i, 16 * i + 16).reduce((a, b) => a ^ b));
+        return dense_hash.map(x => ('00' + x.toString(16)).substr(-2)).join('');
+    } else return list[0] * list[1];
 }
 
 //part one
-console.log(hash(input.split(',').map(x => parseInt(x)), 1));
-
-input = input.split('').map(x => x.charCodeAt()).concat([17, 31, 73, 47, 23]);
-let sparse_hash = hash(input, 64, true);
-let dense_hash = [];
-for (let i = 0; i < 16; i++) dense_hash.push(sparse_hash.slice(16 * i, 16 * i + 16).reduce((a, b) => a ^ b));
+console.log(knot_hash(input, 1));
 
 //part two
-console.log(dense_hash.map(x => ('00' + x.toString(16)).substr(-2)).join(''));
+console.log(knot_hash(input, 64, true));
+
+exports.knot_hash = knot_hash;

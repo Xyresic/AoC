@@ -4,8 +4,7 @@ let summation = (a, b) => {return parseInt(a) + parseInt(b)};
 
 fs.readFile('../inputs/input1.txt', 'utf-8', (err, data) => {
     data = data.trim();
-    let re = /(.)(?=\1)/g;
-    let sum = data.match(re).reduce(summation);
+    let sum = data.match(/(.)(?=\1)/g).reduce(summation);
     if (data.charAt(0) === data.slice(-1)) sum += parseInt(data.charAt(0));
 
     //part one

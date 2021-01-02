@@ -134,3 +134,7 @@ dmypy.json
 
 #Java
 *.class
+
+#C++
+run.exe
+CMakeLists.txt

@@ -138,4 +138,4 @@ dmypy.json
 #C++
 run.exe
 CMakeLists.txt
-./cmake-build-debug/
+cmake-build-debug/

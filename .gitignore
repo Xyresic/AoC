@@ -139,3 +139,6 @@ dmypy.json
 run.exe
 CMakeLists.txt
 cmake-build-debug/
+
+#VSCode
+.vscode/

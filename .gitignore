@@ -140,7 +140,8 @@ run.exe
 CMakeLists.txt
 cmake-build-debug/
 
-#VSCode
+#Visual Studio
+.vs/
 .vscode/
 
 #.NET/C#

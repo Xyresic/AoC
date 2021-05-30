@@ -142,3 +142,7 @@ cmake-build-debug/
 
 #VSCode
 .vscode/
+
+#.NET/C#
+bin/
+obj/

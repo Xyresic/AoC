@@ -1,5 +1,6 @@
 using System;
 using System.IO;
+
 class Day1 {
     static void Main(string[] args) {
         string[] lines = File.ReadAllLines("../../inputs/input1.txt");

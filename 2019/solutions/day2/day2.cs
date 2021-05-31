@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+
 class Day2 {
     static int run_intcode(int[] code, int noun, int verb) {
         int[] intcode = (int[]) code.Clone();

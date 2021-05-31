@@ -1,6 +1,8 @@
+using System;
+using System.IO;
 class Day1 {
     static void Main(string[] args) {
-        string[] lines = System.IO.File.ReadAllLines("../../inputs/input1.txt");
+        string[] lines = File.ReadAllLines("../../inputs/input1.txt");
         int sum = 0;
         int fuel = 0;
         foreach (string line in lines) {
@@ -13,9 +15,9 @@ class Day1 {
         }
 
         //part one
-        System.Console.WriteLine(sum);
+        Console.WriteLine(sum);
 
         //part two
-        System.Console.WriteLine(fuel);
+        Console.WriteLine(fuel);
     }
 }

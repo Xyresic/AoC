@@ -39,8 +39,8 @@ namespace day2
 
         static void Main(string[] args)
         {
-            string lines = File.ReadAllText("../../inputs/input2.txt");
-            int[] intcode = Array.ConvertAll(lines.Split(','), s => int.Parse(s));
+            string line = File.ReadAllText("../../inputs/input2.txt");
+            int[] intcode = Array.ConvertAll(line.Split(','), s => int.Parse(s));
 
             //part one
             Console.WriteLine(RunIntcode(intcode, 12, 2));

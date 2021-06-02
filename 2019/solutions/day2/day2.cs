@@ -5,7 +5,7 @@ namespace day2
 {
     class Driver
     {
-        static int run_intcode(int[] code, int noun, int verb)
+        static int RunIntcode(int[] code, int noun, int verb)
         {
             int[] intcode = (int[]) code.Clone();
             int index = 0;
@@ -43,14 +43,14 @@ namespace day2
             int[] intcode = Array.ConvertAll(lines.Split(','), s => int.Parse(s));
 
             //part one
-            Console.WriteLine(run_intcode(intcode, 12, 2));
+            Console.WriteLine(RunIntcode(intcode, 12, 2));
 
             //part two
             for (int noun = 0; noun < 100; noun++)
             {
                 for (int verb = 0; verb < 100; verb++)
                 {
-                    if (run_intcode(intcode, noun, verb) == 19690720)
+                    if (RunIntcode(intcode, noun, verb) == 19690720)
                     {
                         Console.WriteLine(noun * 100 + verb);
                     }

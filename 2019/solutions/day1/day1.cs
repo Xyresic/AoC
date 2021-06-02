@@ -1,7 +1,7 @@
 using System;
 using System.IO;
 
-namespace Day1
+namespace day1
 {
     class Driver
     {

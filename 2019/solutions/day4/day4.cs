@@ -1,7 +1,6 @@
 ﻿using System;
-using System.Runtime.InteropServices;
 
-namespace Day4
+namespace day4
 {
     class Driver
     {

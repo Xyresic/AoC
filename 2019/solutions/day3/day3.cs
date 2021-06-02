@@ -2,7 +2,7 @@
 using System.IO;
 using System.Collections.Generic;
 
-namespace Day3
+namespace day3
 {
     class Driver
     {

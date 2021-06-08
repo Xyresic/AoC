@@ -162,13 +162,6 @@ namespace day9
                 catch (ArgumentOutOfRangeException) {}
             }
         }
-
-        public static List<long> InitAndRun(long[] intcode, List<long> inputs)
-        {
-            Computer comp = new Computer(intcode, inputs, new List<long>());
-            comp.RunIntcode();
-            return comp.outputs;
-        }
     }
     
     class Driver
@@ -177,14 +170,17 @@ namespace day9
         {
             string line = File.ReadAllText("../../inputs/input9.txt");
             long[] intcode = Array.ConvertAll(line.Split(','), s => long.Parse(s));
-
+            List<long> output = new List<long>();
+            Computer comp = new Computer(intcode, new List<long>(new long[]{1}), output);
+            
             //part one
-            List<long> output = Computer.InitAndRun(intcode, new List<long>(new long[]{1}));
+            comp.RunIntcode();
             if (output.Count == 1) Console.WriteLine(output[0]);
             
             //part two
-            output = Computer.InitAndRun(intcode, new List<long>(new long[]{2}));
-            if (output.Count == 1) Console.WriteLine(output[0]);
+            comp = new Computer(intcode, new List<long>(new long[]{2}), output);
+            comp.RunIntcode();
+            if (output.Count == 2) Console.WriteLine(output[1]);
         }
     }
 }

@@ -21,6 +21,7 @@ with open('../inputs/input13.txt', 'r') as f:
 
         if switch:
             switch = False
+            # part 1
             print(len(points))
 
     xs = [p[0] for p in points]
@@ -28,4 +29,5 @@ with open('../inputs/input13.txt', 'r') as f:
     grid = [['.'] * (max(xs) - min(xs) + 1) for _ in range(max(ys) - min(ys) + 1)]
     for x, y in points:
         grid[y][x] = '#'
+    # part 2
     print('\n'.join(''.join(l) for l in grid))

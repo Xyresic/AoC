@@ -22,15 +22,13 @@ struct Cart {
         if (this->moved) {
             if (other.moved) {
                 if (this->y == other.y) return this->x > other.x;
-                else return this->y > other.y;
-            } else return true;
-        } else {
-            if (other.moved) return false;
-            else {
-                if (this->y == other.y) return this->x > other.x;
-                else return this->y > other.y;
+                return this->y > other.y;
             }
+            return true;
         }
+        if (other.moved) return false;
+        if (this->y == other.y) return this->x > other.x;
+        return this->y > other.y;
     }
 };
 

@@ -48,7 +48,7 @@ int main(void) {
     std::vector<Cart> carts;
     std::vector<std::vector<char>> tracks;
     int y = 0;
-    while(getline(input, line)) {
+    while (getline(input, line)) {
         std::vector<char> track;
         for (int x = 0; x < line.size(); x++) {
             switch (line[x]) {
